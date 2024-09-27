@@ -154,7 +154,7 @@ body {
 
 @media screen and (max-width: 992px) {
     .page-container {
-        padding-top: 64px;
+        padding: 64px 0 0 0;
     }
 
     .text-block {
@@ -210,6 +210,7 @@ body {
             bottom: 16px;
             padding: 3.72px;
             transform: translateY(0);
+
             img {
                 width: 64.55px;
                 height: 64.55px;

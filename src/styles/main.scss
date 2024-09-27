@@ -225,7 +225,9 @@ body {
     .text-block--secondary {
         max-width: unset;
         width: unset;
-        padding: 0 24px 64px;
+        padding: 0 24px;
+        margin-bottom: 0 !important;
+
     }
 
     .text-block--secondary,

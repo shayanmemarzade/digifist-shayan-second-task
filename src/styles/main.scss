@@ -1,0 +1,234 @@
+@import "../fonts/avenir/avenir.css";
+@import "../fonts/ITCAvantGardePro/ITCAvantGardePro.css";
+
+$color-black: #000;
+$color-grey: #777;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    color: $color-black;
+    font-family: 'Avenir', sans-serif !important;
+    display: flex;
+    justify-content: center;
+}
+
+.page-container {
+    max-width: 100%;
+    margin: 0 24px;
+    width: 1328px;
+    padding-top: 160px;
+}
+
+.text-block {
+    max-width: 50%;
+    width: 600px;
+    padding: 69px 32px 96px 68px;
+
+    &__heading {
+        font-family: 'ITC Avant Garde Gothic Pro';
+        font-size: 39.06px;
+        font-weight: 700;
+        line-height: 50.78px;
+        text-align: left;
+        margin-bottom: 40px;
+    }
+}
+
+.button--shop {
+    width: 140px;
+    height: 47px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 12.8px;
+    font-weight: 900;
+    line-height: 17.48px;
+    letter-spacing: 1px;
+    background: $color-black;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background: $color-grey;
+    }
+}
+
+.product-gallery {
+    display: flex;
+    gap: 24px;
+    margin: 0 24px;
+
+    &__item {
+        width: 600px;
+        max-width: 50%;
+        position: relative;
+
+        &:last-child {
+            margin-left: auto;
+            transform: translateY(-455px);
+        }
+    }
+
+    &__info {
+        background: #fff;
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        width: 291px;
+        padding: 5px 5px 5px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+            width: 62px;
+            height: 62px;
+        }
+    }
+
+    &__title {
+        font-size: 12.8px;
+        font-weight: 900;
+        line-height: 17.48px;
+        margin-bottom: 5px;
+    }
+
+    &__price {
+        font-size: 12.8px;
+        font-weight: 400;
+        line-height: 20.48px;
+        color: #666666;
+    }
+}
+
+.text-block--secondary {
+    max-width: 50%;
+    width: 600px;
+    padding: 128px 112px 0px 56px;
+    margin-left: auto;
+    transform: translateY(-455px);
+}
+
+.link--read-more {
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 21.86px;
+    height: 28px;
+    display: inline-block;
+    border-bottom: 1px solid $color-black;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    color: $color-black;
+
+    &:hover {
+        color: $color-grey;
+        border-bottom: 1px solid $color-grey;
+    }
+}
+
+
+.text-block__paragraph {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25.6px;
+    margin-bottom: 32px;
+    color: $color-grey;
+}
+
+
+@media screen and (max-width: 992px) {
+    .page-container {
+        padding-top: 64px;
+    }
+
+    .text-block {
+        max-width: unset;
+        width: unset;
+        padding: 0px 24px 32px 24px;
+
+        &__heading {
+            font-size: 25px;
+            line-height: 32.5px;
+            margin-bottom: 24px;
+        }
+    }
+
+    .button--shop {
+        width: 120px;
+        height: 35px;
+        font-size: 10.24px;
+        font-weight: 700;
+        line-height: 16.79px;
+        letter-spacing: 1px;
+    }
+
+    .product-gallery {
+        overflow-x: auto;
+        overflow-y: hidden;
+        margin: 0 0 32px 24px;
+        scroll-snap-type: x mandatory;
+        /* make it smooth on iOS */
+        -webkit-overflow-scrolling: touch;
+
+        &__item {
+            width: 240px;
+            max-width: unset;
+            scroll-snap-align: start;
+            flex: 0 0 240px;
+            height: 273.08px;
+            margin-left: unset !important;
+
+            &:first-child {
+                order: 2;
+            }
+
+            &:last-child {
+                order: 1;
+            }
+        }
+
+        &__info {
+            width: unset;
+            right: 16px;
+            bottom: 16px;
+            padding: 3.72px;
+
+            img {
+                width: 64.55px;
+                height: 64.55px;
+            }
+        }
+
+        &__details {
+            display: none;
+        }
+    }
+
+    .text-block--secondary {
+        max-width: unset;
+        width: unset;
+        padding: 0 24px 64px;
+    }
+
+    .text-block--secondary,
+    .product-gallery__item {
+        transform: translateY(0px) !important;
+    }
+
+    .text__paragraph {
+        margin-bottom: 24px;
+    }
+}
